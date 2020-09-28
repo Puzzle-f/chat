@@ -20,6 +20,7 @@ import javafx.stage.WindowEvent;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
@@ -129,6 +130,7 @@ public class Controller implements Initializable {
 
                             textArea.appendText(str + "\n");
                         }
+                        FileOutputStream outTxt = new FileOutputStream("history_" + nickname+".txt", true);
 
                         //цикл работы
                         while (true) {
@@ -156,6 +158,8 @@ public class Controller implements Initializable {
                                 //==============//
                             } else {
                                 textArea.appendText(str + "\n");
+                                String s = str + "\n";
+                                outTxt.write(s.getBytes());
                             }
                         }
                     } catch (RuntimeException e) {

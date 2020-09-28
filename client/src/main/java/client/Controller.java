@@ -130,7 +130,7 @@ public class Controller implements Initializable {
 
                             textArea.appendText(str + "\n");
                         }
-                        FileOutputStream outTxt = new FileOutputStream("history_" + nickname+".txt", true);
+                        FileOutputStream outTxt = new FileOutputStream("client/src/main/java/history_"  + nickname+".txt", true);
 
                         //цикл работы
                         while (true) {
